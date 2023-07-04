@@ -2,10 +2,18 @@
 var currentHour = dayjs().format("D/MM/YYYY/HA");
 $("#currentDay").text(currentHour);
 
-//Set Start Time
+//Set Start Time and End Time
 var startTime = dayjs().startOf("day").hour(8);
+var endTime = dayjs().startOf("day").hour(18);
 
 //Create Loop That Fills Out Scheduler
+function createSchedule() {
+  for (hour = startTime; hour < endTime; hour++) {
+    console.log("test" + hour);
+  }
+}
+
+createSchedule();
 
 //Get HTML Loaded and Added Event Listner to Save Button
 $(document).ready(function () {
@@ -15,8 +23,8 @@ $(document).ready(function () {
   });
 });
 
-// Below is Code to Re-Create. Changed ID to Hour-Block from HTML Source
 {
+  // Below is Code to Re-Create. Changed ID to Hour-Block from HTML Source
   /* <div id="hour-Block" class="row time-block past">
 <div class="col-2 col-md-1 hour text-center py-3">9AM</div>
 <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
