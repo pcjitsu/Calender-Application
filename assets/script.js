@@ -4,7 +4,7 @@ var startDay = dayjs().startOf("day").add(7, "hour");
 //get Current Hour
 var currentHour = dayjs().format("H");
 //Last Hour in WorkDay
-var endOfWorkHours = 17;
+var endOfWorkHours = 18;
 
 //create empty schedule hour variable
 var scheduleHour;
@@ -16,7 +16,7 @@ $("#currentDay").text(currentTime);
 
 //Create Loop That Fills Out Scheduler from 8AM
 function createSchedule() {
-  for (var hour = 8; hour < endOfWorkHours; hour++) {
+  for (var hour = 9; hour < endOfWorkHours; hour++) {
     if (currentHour == hour) {
       timeStatus = "present";
     } else if (currentHour < hour) {
