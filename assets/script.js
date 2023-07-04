@@ -1,22 +1,39 @@
+//Start of day
+var startDay = dayjs().startOf("day").add(7, "hour");
+
+//get Current Hour
+var currentHour = dayjs().format("H");
+//Last Hour in WorkDay
+var endOfWorkHours = 17;
+
+//create empty schedule hour variable
+var scheduleHour;
+var timeStatus;
+
 // Get Current Time and Display
 var currentTime = dayjs().format("D/MM/YYYY/HA");
 $("#currentDay").text(currentTime);
 
-//Start of day
-var startDay = dayjs().startOf("day").add(7, "hour");
-
-//Last Hour in WorkDay
-var endOfWorkHours = 17;
-
-var scheduleHour;
-
 //Create Loop That Fills Out Scheduler from 8AM
 function createSchedule() {
   for (var hour = 8; hour < endOfWorkHours; hour++) {
-    scheduleHour = startDay.add(1, "HH").format("HH");
+    if (currentHour == hour) {
+      timeStatus = "present";
+    } else if (currentHour < hour) {
+      timeStatus = "past";
+    } else {
+      timeStatus = "future";
+    }
 
-    console.log("test: " + scheduleHour);
-    console.log("test: " + hour);
+    var appendBlock = `<div id="hour-${hour}" class="row time-block ${timeStatus}">
+        <div class="col-md-1 hour">${hour}</div>
+        <textarea class="col-md-10 description ${hour}"></textarea>
+        <button class="btn saveBtn col-md-1">
+            <i class="fas fa-save"></i>
+        </button>
+    </div>`;
+
+    $(".container-lg").append(appendBlock);
   }
 }
 
