@@ -54,4 +54,11 @@ $(document).ready(function () {
   saveButtonEl.on("click", saveEvents);
 });
 
+function loadPreviousEvents() {
+  for (var hour = 9; hour < endOfWorkHours; hour++) {
+    var previousEvents = localStorage.getItem($(`hour-${hour}`));
+  }
+}
+
 createSchedule();
+loadPreviousEvents();
