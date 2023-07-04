@@ -6,8 +6,9 @@ var currentHour = dayjs().format("H");
 //Last Hour in WorkDay
 var endOfWorkHours = 18;
 
-//create empty schedule hour variable
+//create empty variable for time status to be filled later
 var timeStatus;
+//clear text area to be gfilled later
 var timeDesc = "";
 // Get Current Time and Display
 var currentTime = dayjs().format("D/MM/YYYY/HA");
