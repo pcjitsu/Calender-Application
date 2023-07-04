@@ -2,6 +2,9 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 
+var currentHour = dayjs().format("D/MM/YYYY/HA");
+$("#currentDay").text(currentHour);
+
 $(document).ready(function () {
   //Ensure HTML has been parsed.
 
