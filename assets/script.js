@@ -7,7 +7,6 @@ var currentHour = dayjs().format("H");
 var endOfWorkHours = 18;
 
 //create empty schedule hour variable
-var scheduleHour;
 var timeStatus;
 var timeDesc = "";
 // Get Current Time and Display
