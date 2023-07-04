@@ -28,8 +28,11 @@ $(document).ready(function () {
 });
 
 // PSUEDO
-// Event Listener on Save Button
-// Get
+// display today targeting current day
+// create loop to create different time blocks
+// change class on each segment based on current time minus block time
+// event listener on save saveButton
+// store input into locals Storage
 
 // GIVEN I am using a daily planner to create a schedule
 // WHEN I open the planner
