@@ -41,7 +41,7 @@ function createSchedule() {
 //Function save information when placed into textfield
 function saveEvents() {
   //this being saved button, traversing up, then back down to appropriate value
-  var timeBlock = $(this).parent().children().eq(1);
+  var timeBlock = $(this).parent().attr("id");
   var timeDesc = $(this).parent().children().eq(1).val();
   localStorage.setItem(timeBlock, timeDesc);
   console.log(timeBlock, timeDesc);
