@@ -3,13 +3,48 @@ var currentHour = dayjs().format("D/MM/YYYY/HA");
 $("#currentDay").text(currentHour);
 
 //Set Start Time and End Time
-var startTime = dayjs().startOf("day").hour(8);
-var endTime = dayjs().startOf("day").hour(18);
+// var startTime = dayjs().startOf("day").hour(8);
+// var endTime = dayjs().startOf("day").hour(17);
+/*
+var hour = 0;
+timeClass = "";
 
+let row = $("#test").html(`<div id="hour-${hour}" class="row time-block ${timeClass}">
+<div class="col-2 col-md-1 hour text-center py-3">${hour}</div>
+<textarea class="col-8 col-md-10 description" rows="3"> </textarea>
+<button class="btn saveBtn col-2 col-md-1" aria-label="save">
+  <i class="fas fa-save" aria-hidden="true"></i>
+  </button>
+</div>`);
+*/
 //Create Loop That Fills Out Scheduler
 function createSchedule() {
-  for (hour = startTime; hour < endTime; hour++) {
-    console.log("test" + hour);
+  for (let hour = 8; hour < 17; hour++) {
+    console.log("test: " + hour);
+
+    // Create outer most row
+    // let rowContainer = $("div").attr("id", `hour-${hour}`).addClass("row time-block");
+
+    let timeStatus = currentHour;
+    let timeClass = "past";
+    /* if (timeStatus < currentHour) {
+      timeClass = "past";
+    }
+    */
+
+    // the $(this) reference the WINDOW object --> we want it to refer to our container object
+    let row = $(this).html(`<div id="hour-${hour}" class="row time-block ${timeClass}">
+    <div class="col-2 col-md-1 hour text-center py-3">${hour}</div>
+    <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
+    <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+      <i class="fas fa-save" aria-hidden="true"></i>
+      </button>
+    </div>`);
+
+    console.log("Row : ", row);
+
+    //$(".container-lg").append(row);
+    $("#test").append(row);
   }
 }
 
