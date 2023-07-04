@@ -3,15 +3,17 @@ var currentTime = dayjs().format("D/MM/YYYY/HA");
 $("#currentDay").text(currentTime);
 
 //Start of day
-var startDay = dayjs().startOf("day").add(8, "hour");
+var startDay = dayjs().startOf("day").add(7, "hour");
 
 //Last Hour in WorkDay
 var endOfWorkHours = 17;
 
+var scheduleHour;
+
 //Create Loop That Fills Out Scheduler from 8AM
 function createSchedule() {
-  for (var hour = 0; hour < endOfWorkHours; hour++) {
-    var scheduleHour = startDay.add(1, "h").format("HH");
+  for (var hour = 8; hour < endOfWorkHours; hour++) {
+    scheduleHour = startDay.add(1, "HH").format("HH");
 
     console.log("test: " + scheduleHour);
     console.log("test: " + hour);
