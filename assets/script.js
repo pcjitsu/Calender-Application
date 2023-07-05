@@ -52,7 +52,7 @@ function saveEvents() {
   var timeBlock = $(this).parent().attr("id");
   var timeDesc = $(this).parent().children().eq(1).val();
   localStorage.setItem(timeBlock, timeDesc);
-  console.log(timeBlock, timeDesc);
+  // console.log(timeBlock, timeDesc);
 }
 
 //Get HTML Loaded and Added Event Listner to Save Button
