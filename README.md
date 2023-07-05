@@ -2,33 +2,32 @@
 
 # Description
 
-This webpage can be utilized to generate a secure password utilizing 4 different character types.
-Futhermore, this shows my ability in understanding how to utilize the following concepts in Javascript:
-
-1. If Statements
-2. While Loops
-3. Array and Object Data Structures
-4. Methods
-5. Passing local variables and utilizing global variables
-6. Use Web APIs to crete prompts and conirmations
+Trying to schedule your 9-5 a pain?
+Use this web App to stay on top of your days activities.
 
 ## Installation
 
 Go to Website; No installation required
-If no characters are selected during prompt, please refresh page.
 
 ## Usage
 
-How to use this app is to go to website, compare to acceptance criteria, click generate button, make selections of at least 1 character type and check output
+Input information into the hour block to make sure you stay up to date.
+Once information is enter, remember to hit the save button.
+** REMEMBER **
+This keeps track for the DAY, make sure you check the web app before 5PM to see the green, red and grey highlights
+to see whats coming up in the rest of the day!
 
 Go to WebPage found here
 
-https://pcjitsu.github.io/Password-Creator/
+https://pcjitsu.github.io/Calender-Application/
 
 ## Credits
 
 SMU Bootcamp Resources
-StacoverFlow Reources
+StackoverFlow Reources
+Youtube Misc. Videos
+BCS Questions
+OpenAI for Code Review during template literal loop section
 
 ## License
 
@@ -38,7 +37,7 @@ MIT License
 
 ## Tests
 
-Click button and run through prompts
+Apply Console.Logs to any part of the code.
 
 Go to website and compare to mock up; please look at screenshot
-![WebAppScreenshot](Assets/images/Password-Creator-Mock.png?raw=true)
+![WebAppScreenshot](assets/05-third-party-apis-homework-demo.gif?raw=true)
