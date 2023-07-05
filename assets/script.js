@@ -17,6 +17,13 @@ $("#currentDay").text(currentTime);
 //Create Loop That Fills Out Scheduler from 9AM
 function createSchedule() {
   for (var hour = 9; hour < endOfWorkHours; hour++) {
+    //Loading data from previous event
+    var savedEvent = localStorage.getItem(`hour-${hour}`);
+    if (savedEvent) {
+      timeDesc = savedEvent;
+    } else {
+      timeDesc = "";
+    }
     //Checks to see what timeStatus is to put appropriate color highlight
     if (currentHour == hour) {
       timeStatus = "present";
@@ -25,7 +32,7 @@ function createSchedule() {
     } else {
       timeStatus = "future";
     }
-    //creating div block with all relevent information
+    //creating div block with all relevent information with template literals
     var appendBlock = `<div id="hour-${hour}" class="row time-block ${timeStatus}">
     <div class="col-md-1 hour">${hour}</div>
     <textarea class="col-md-10 description">${timeDesc}</textarea>
@@ -54,11 +61,4 @@ $(document).ready(function () {
   saveButtonEl.on("click", saveEvents);
 });
 
-function loadPreviousEvents() {
-  for (var hour = 9; hour < endOfWorkHours; hour++) {
-    var previousEvents = localStorage.getItem($(`hour-${hour}`));
-  }
-}
-
 createSchedule();
-loadPreviousEvents();
